@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>Installation &#8212; Anjuna Vault Unseal 0.17.0050 documentation</title>
+
+    <link rel="stylesheet" href="_static/material-icons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/notosanscjkjp.css" />
+    <link rel="stylesheet" type="text/css" href="_static/roboto.css" />
+    <link rel="stylesheet" type="text/css" href="_static/material-design-lite-1.3.0/material.teal-red.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx_materialdesign_theme.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/sphinx_materialdesign_theme.js"></script>
+    <link rel="shortcut icon" href="_static/unseal_logo.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Getting started" href="getting-started.html" />
+    <link rel="prev" title="Getting access to Intel® SGX" href="sgx-servers.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link is-active">Installation</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+            <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+        </nav>
+    </div>
+    <div class="mdl-layout__header-row header-links">
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+          
+              <a  class="mdl-navigation__link" href="https://www.anjuna.io">
+                  
+				     
+					  <i class="material-icons navigation-link-icon">home</i>
+					
+				  
+                  Anjuna
+              </a>
+          
+              <a  class="mdl-navigation__link" href="mailto:support@anjuna.io">
+                  
+				     
+					  <i class="material-icons navigation-link-icon">email</i>
+					
+				  
+                  Contact us
+              </a>
+          
+              <a  class="mdl-navigation__link" href="https://join.slack.com/t/anjunacommunity/shared_invite/enQtNTcxNzkxMjI1ODMxLWRiYjhmYjM0YzdkYWUyY2UyOGViZjQ3ZWMyYjNlZmI2ZmI2MWY5ZGRhYmQ2MmVjNTM5MjY3MTE5YWM2NjkyYzM">
+                  
+				    
+					  <img height="20px" src="_static/anjuna/slack.png"/>
+				    
+				  
+                  Anjuna Community Slack
+              </a>
+      </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <img class="logo" src="_static/unseal_logo.svg" alt="Anjuna Vault Unseal"/>
+          </a>
+      </span>
+    
+<div class="globaltoc">
+  <span class="mdl-layout-title toc">Table Of Contents</span>
+  
+  
+      
+      <nav class="mdl-navigation">
+          <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sgx-servers.html">Getting access to Intel® SGX</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tool-reference.html">Anjuna Tools Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference/installer-reference.html">Anjuna Vault-Unseal tool Installer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/sgx-unseal-config.html">Anjuna Vault Unseal Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/sgx-unseal-run.html">Anjuna Vault Unseal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/vault-quick-setup.html">Tutorial: Setting up a Vault test instance</a></li>
+</ul>
+</li>
+</ul>
+
+      </nav>
+  
+  </div>
+
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+<header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <img class="logo" src="_static/unseal_logo.svg" alt="Anjuna Vault Unseal"/>
+          </a>
+      </span>
+    
+<div class="globaltoc">
+  <span class="mdl-layout-title toc">Table Of Contents</span>
+  
+  
+      
+      <nav class="mdl-navigation">
+          <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sgx-servers.html">Getting access to Intel® SGX</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tool-reference.html">Anjuna Tools Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference/installer-reference.html">Anjuna Vault-Unseal tool Installer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/sgx-unseal-config.html">Anjuna Vault Unseal Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/sgx-unseal-run.html">Anjuna Vault Unseal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/vault-quick-setup.html">Tutorial: Setting up a Vault test instance</a></li>
+</ul>
+</li>
+</ul>
+
+      </nav>
+  
+  </div>
+
+</header>
+
+    <div class="document">
+        <div class="page-content">
+        
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>To install and run Anjuna Vault-Unseal tool, the following prerequisites must be met:</p>
+<div class="section" id="hardware-requirements">
+<h3>Hardware requirements<a class="headerlink" href="#hardware-requirements" title="Permalink to this headline">¶</a></h3>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<ul class="last simple">
+<li>The host machine must use a CPU that supports Intel® SGX (see <a class="reference internal" href="sgx-servers.html#intel-sgx-access"><span class="std std-ref">Getting access to Intel® SGX</span></a>).</li>
+<li>Intel SGX must be enabled in the BIOS of the host machine.
+Be sure to use the <em>Enabled</em> setting, <strong>not</strong> <em>Software Controlled</em>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="supported-platforms">
+<h3>Supported platforms<a class="headerlink" href="#supported-platforms" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Ubuntu 16.04 (Xenial) Server and Desktop editions</li>
+<li>Ubuntu 18.04 (Bionic Beaver) Server and Desktop editions</li>
+</ul>
+</div>
+<div class="section" id="software-requirements">
+<h3>Software requirements<a class="headerlink" href="#software-requirements" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The user performing the installation must have administrator privileges (root or sudo permissions).</li>
+<li>The Intel SGX Driver must be installed and loaded (the installer will attempt
+to install this component if it is not found).</li>
+<li>The Intel SGX Platform Software (PSW) must be installed and running (the Anjuna Vault-Unseal tool will attempt
+to install this component if it is not found).</li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">The Intel SGX components are required to run the Anjuna Vault-Unseal tool.
+If those components are not already installed
+on the host, the Anjuna Vault-Unseal tool installer has the ability to set up
+Intel SGX components during the installation.</p>
+</div>
+</div>
+</div>
+<div class="section" id="execute-the-anjuna-vault-unseal-tool-installer">
+<h2>Execute the Anjuna Vault-Unseal tool installer<a class="headerlink" href="#execute-the-anjuna-vault-unseal-tool-installer" title="Permalink to this headline">¶</a></h2>
+<p>An installation package is provided to install the Anjuna Vault-Unseal tool on
+an SGX-enabled host. The package is an executable that performs the following
+actions:</p>
+<ol class="arabic simple">
+<li>checks for Intel SGX system compatibility</li>
+<li>checks for OS compatibility (Ubuntu 16.04 or Ubuntu 18.04)</li>
+<li>checks for availability of the Intel® SGX Driver</li>
+<li>checks for availability of the Intel® PSW stack</li>
+<li>installs the Intel® SGX components if necessary</li>
+<li>installs the Anjuna Vault-Unseal tool on the host</li>
+<li>installs the Anjuna Vault-Unseal tool documentation (in HTML format)</li>
+<li>installs the sealing tool</li>
+</ol>
+<p>The Anjuna Vault-Unseal tool installers are available by downloading them from the following locations (select the appropriate
+file for your platform):</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text"><strong>For Ubuntu 16</strong></span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://s3-us-west-1.amazonaws.com/anjuna-security.vault.unseal/anjuna-vault-unseal-ubuntu16-0.17.0050.bin
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text"><strong>For Ubuntu 18</strong></span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://s3-us-west-1.amazonaws.com/anjuna-security.vault.unseal/anjuna-vault-unseal-ubuntu18-0.17.0050.bin
+</pre></div>
+</div>
+</div>
+<p>The Anjuna Vault-Unseal tool installers can also be downloaded from a browser using the following links:</p>
+<ul class="simple">
+<li>For Ubuntu 16: <a class="reference external" href="https://s3-us-west-1.amazonaws.com/anjuna-security.vault.unseal/anjuna-vault-unseal-ubuntu16-0.17.0050.bin">anjuna-vault-unseal-ubuntu16-0.17.0050.bin</a></li>
+<li>For Ubuntu 18: <a class="reference external" href="https://s3-us-west-1.amazonaws.com/anjuna-security.vault.unseal/anjuna-vault-unseal-ubuntu18-0.17.0050.bin">anjuna-vault-unseal-ubuntu18-0.17.0050.bin</a></li>
+</ul>
+<p>The rest of this document will assume that the host is running Ubuntu 16.04
+and refer to the installation file <code class="docutils literal notranslate"><span class="pre">anjuna-vault-unseal-ubuntu16-0.17.0050.bin</span></code>.
+When running on Ubuntu 18.04, the instructions should be adjusted to use the
+<code class="docutils literal notranslate"><span class="pre">anjuna-vault-unseal-ubuntu18-0.17.0050.bin</span></code> file.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>The Anjuna Vault-Unseal tool installer is a self-extracting file and requires
+<code class="docutils literal notranslate"><span class="pre">executable</span></code> permission to run. If the permission was removed
+during the file transfer between hosts, it can be re-applied with the
+<code class="docutils literal notranslate"><span class="pre">chmod</span></code> command. If you see this error:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./anjuna-vault-unseal-ubuntu16-0.17.0050.bin
+bash: anjuna-vault-unseal-ubuntu16-0.17.0050.bin: Permission denied
+</pre></div>
+</div>
+<p>just run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ chmod +x ./anjuna-vault-unseal-ubuntu16-0.17.0050.bin
+</pre></div>
+</div>
+<p class="last">and then run the installer again.</p>
+</div>
+<p>The installer supports various command-line options to customize its behavior.
+To see the available options, use the <code class="docutils literal notranslate"><span class="pre">--help</span></code> option:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./anjuna-vault-unseal-ubuntu16-0.17.0050.bin --help
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Anjuna SGX Runtime self-extracting installer
+
+Usage: anjuna-vault-unseal-ubuntu16-0.17.0050.bin <span class="o">[</span>OPTIONS<span class="o">]</span>
+Run this file to extract and install Anjuna Runtime.
+
+Available options:
+  -v, --verbose   Print more information during the setup.
+  -l, --list      List the content of this package
+  -d, --docs      Extract the documentation only and skip the setup.
+  -e, --extract   Extract the package, but skip the setup.
+  -h, --help      Print this message.
+  --version       Print the version information.
+</pre></div>
+</div>
+<p>To get started, simply run the installer</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./anjuna-vault-unseal-ubuntu16-0.17.0050.bin
+</pre></div>
+</div>
+<p>which should produce the following output:</p>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span> Anjuna SGX Runtime self-extracting installer
+
+ Checking for Operating System
+ Found Ubuntu 16.04.5 LTS
+
+ Checking for SGX Hardware support
+ This host is SGX capable (sgx_is_capable =&gt; 1)
+
+ &lt;... snip ...&gt;
+
+
+ Summary:
+<span class="hll"> Anjuna SGX Runtime fully installed
+</span> Run the following command to setup your environment
+
+<span class="hll">    export ANJUNA_HOME=/home/anjuna/anjuna-vault-unseal-ubuntu16-0.13.0001
+</span><span class="hll">    source ${ANJUNA_HOME}/env.sh
+</span></pre></div>
+</td></tr></table></div>
+<p>The message on line 13 indicates that the Anjuna Vault-Unseal tool was properly
+installed.</p>
+<p>The output on line 17 provides a convenient script to set up the environment
+variables when running the various tools provided by the Anjuna Vault-Unseal tool.
+You can ensure that these environment variables are always set by adding the
+following line to your <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code> file, where it will be executed
+automatically at login:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">ANJUNA_HOME</span><span class="o">=</span>/home/anjuna/anjuna-vault-unseal-ubuntu16-0.17.0050
+$ <span class="nb">source</span> <span class="si">${</span><span class="nv">ANJUNA_HOME</span><span class="si">}</span>/env.sh
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">The location of the <code class="docutils literal notranslate"><span class="pre">env.sh</span></code> file depends on the directory where the installer
+is run. In the example above, the location is assumed to be <code class="docutils literal notranslate"><span class="pre">/home/anjuna</span></code>.
+Make sure the full path of the <code class="docutils literal notranslate"><span class="pre">env.sh</span></code> is identical to the path shown
+in the installer out (i.e. replace the <code class="docutils literal notranslate"><span class="pre">/home/anjuna</span></code> fragment with the
+correct location)</p>
+</div>
+<p>After setting this up, you can either log out and back in, or just manually source
+the file from <code class="docutils literal notranslate"><span class="pre">bash</span></code>.</p>
+</div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">Installation</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a><ul>
+<li><a class="reference internal" href="#hardware-requirements">Hardware requirements</a></li>
+<li><a class="reference internal" href="#supported-platforms">Supported platforms</a></li>
+<li><a class="reference internal" href="#software-requirements">Software requirements</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#execute-the-anjuna-vault-unseal-tool-installer">Execute the Anjuna Vault-Unseal tool installer</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="sgx-servers.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L material-icons">arrow_back</i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>Getting access to Intel® SGX</div>
+         </div>
+     </a>
+     <a id="button-next" href="getting-started.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+        <i class="pagenation-arrow-R material-icons">arrow_forward</i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>Getting started</div>
+        </div>
+     </a>
+  </div>
+
+        <footer class="mdl-mini-footer">
+    <div class="mdl-mini-footer__left-section">
+      <div class="mdl-logo">Anjuna Vault Unseal</div>
+      <!--div>
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sgx-servers.html">Getting access to Intel® SGX</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tool-reference.html">Anjuna Tools Reference</a></li>
+</ul>
+
+      </div-->
+    </div>
+
+    <div class="mdl-mini-footer__right-section">
+        <div>&copy; Copyright 2019, Anjuna Security, Inc..</div>
+	  <div> <a href="privacy.html">Privacy policy</a> </div>
+    </div>
+</footer>
+        </main>
+    </div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133911409-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-133911409-2');
+</script>
+
+
+<script type="text/javascript" src="https://secure.leadforensics.com/js/145499.js" ></script>
+<noscript><img alt="" src="https://secure.leadforensics.com/145499.png" style="display:none;" /></noscript>
+
+
+  </body>
+</html>
