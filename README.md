@@ -1,5 +1,8 @@
 # Anjuna Unseal tool for Hashicorp Vault
-Anjuna Unseal tool for Hashicorp Vault. See documentation on   
+
+<img src="https://docs.anjuna.io/vault-unseal/_static/unseal_logo.svg" width="50%">
+
+See documentation on   
 https://docs.anjuna.io/vault-unseal  
 or  
 https://anjuna-security.github.io/anjuna-unseal
