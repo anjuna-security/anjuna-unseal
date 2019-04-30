@@ -1,1 +1,4 @@
 theme: jekyll-theme-minimal
+title: Anjuna Unseal
+description: Secure Unsealing for Hashicorp Vault
+logo: https://docs.anjuna.io/vault-unseal/_static/unseal_logo.png
