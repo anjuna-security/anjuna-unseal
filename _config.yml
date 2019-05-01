@@ -4,3 +4,4 @@ description: Secure Unsealing for Hashicorp Vault
 logo: unseal_logo.svg
 show_downloads: true
 google_analytics: UA-133911409-2
+url: https://s3-us-west-1.amazonaws.com/anjuna-security.vault.unseal/anjuna-vault-unseal-ubuntu18-0.17.0050.bin
