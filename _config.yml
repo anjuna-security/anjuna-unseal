@@ -2,3 +2,5 @@ theme: jekyll-theme-minimal
 title: Anjuna Unseal
 description: Secure Unsealing for Hashicorp Vault
 logo: unseal_logo.svg
+show_downloads: true
+google_analytics: UA-133911409-2
